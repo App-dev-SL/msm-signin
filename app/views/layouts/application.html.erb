@@ -29,7 +29,8 @@
 <a href="/characters">Characters</a>
 </li>
 
-<%if #not signed in%>
+
+<%if @current_user==nil%>
 <li>
 <a href="/user_sign_up">Sign up</a>
 </li>
@@ -39,10 +40,18 @@
 </li>
 <%else%>
 <li>
+<a href="/bookmarks">My bookmarks</a>
+</li>
+
+
+<li>
 <a href="/user_sign_out">Sign out </a>
 </li>
 <%end%>
 </ul>
+<%= notice%>
+<%= alert%>
+
     <%= yield %>
   </body>
 </html>
